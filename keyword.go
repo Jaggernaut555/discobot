@@ -40,7 +40,7 @@ func YoutubeSearch(query *string) string {
 	response, err := call.Do()
 	handleError(err, "")
 
-	if response == nil {
+	if response == nil || len(response.Items) == 0 {
 		return result
 	}
 
